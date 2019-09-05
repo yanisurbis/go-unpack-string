@@ -4,8 +4,8 @@ import "testing"
 
 func TestUnpack(t *testing.T) {
 	t.Run("unpacking multiple times", func(t *testing.T) {
-		got, _ := Unpack("a4bc2d11e")
-		want := "aaaabccddddddddddde"
+		got, _ := Unpack("a4bc2d11e2")
+		want := "aaaabccdddddddddddee"
 
 		if got != want {
 			t.Errorf("got %q want %q", got, want)

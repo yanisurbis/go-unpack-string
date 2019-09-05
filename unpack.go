@@ -2,7 +2,6 @@ package main
 
 import (
 	"errors"
-	"fmt"
 )
 
 func Unpack(s string) (string, error) {
@@ -40,8 +39,4 @@ func Unpack(s string) (string, error) {
 	}
 
 	return string(res), nil
-}
-
-func main() {
-	fmt.Println(Unpack("a4bc2d11e"))
 }
