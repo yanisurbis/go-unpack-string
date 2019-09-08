@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"unicode"
 )
 
 func Unpack(s string) (string, error) {
@@ -10,13 +11,11 @@ func Unpack(s string) (string, error) {
 	var n int
 	var mem rune
 
-	for i := 0; i < len(runes); i++ {
-		c := runes[i]
-
-		if c > 48 && c < 58 {
+	for i, c := range runes {
+		if unicode.IsNumber(c) {
 			if n == 0 {
 				if i == 0 {
-					return "", errors.New("String is incorrect")
+					return "", errors.New("string is incorrect")
 				}
 				mem = runes[i-1]
 			}
